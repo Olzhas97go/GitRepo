@@ -101,7 +101,7 @@ jobs:
               BUILD_NUMBER="${GITHUB_RUN_NUMBER}"
 
       - name: Test 
-        run: make testdeployment URL=${{ vars.URL }} VERSION=${GITHUB_SHA}
+        run: make testdeployment URL=${{ secrets.URL }} VERSION=${GITHUB_SHA}
     
   # Deploy to Production environment. Depends on 'Staging' job.
   Production:
